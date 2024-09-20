@@ -57,8 +57,8 @@ export default function Consultation() {
 
   return (
     <div className="flex flex-col w-full justify-center items-center mt-[20%] sm:mt-[18%] md:mt-[16%] lg:mt-[14%] xl:mt-[6%]">
-      <div className="flex flex-col w-[80%] justify-center items-center">
-        <div className="flex flex-col justify-center items-center w-[80%] gap-[10px]">
+      <div className="flex flex-col xl:w-[80%] w-[95%] justify-center items-center">
+        <div className="flex flex-col justify-center items-center w-[100%] gap-[10px]">
           <h1 className="text-black font-spaceGrotesk text-[2.5rem] font-medium font-[500] leading-normal inline-block bg-neonGreen">
             Book a consultation
           </h1>
