@@ -7,7 +7,7 @@ const baseUrl = import.meta.env.BASE_URL;
 const link = document.createElement("link");
 link.rel = "icon";
 link.type = "image/svg+xml";
-link.href = `${baseUrl}icon.svg`;
+link.href = `${baseUrl}icon.svg?v=1.1`;
 
 document.head.appendChild(link);
 
