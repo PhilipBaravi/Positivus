@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For webkit-based browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px; /* Width of vertical scrollbar */
+  height: 8px; /* Height of horizontal scrollbar */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: white; /* Track background color */
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: black; /* Thumb color (black) */
+  border-radius: 0; /* No rounded corners */
+}
+
+/* For Firefox */
+.scrollbar-custom {
+  scrollbar-width: thin; /* Set scrollbar to be thinner */
+  scrollbar-color: black white; /* Thumb and track color for Firefox */
+}
