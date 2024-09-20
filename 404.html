@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <script>
+      var path = window.location.pathname;
+      var hash = window.location.hash;
+      var newURL = window.location.origin + "/Positivus" + path + hash;
+      window.location.replace(newURL);
+    </script>
+  </head>
+  <body>Redirecting...</body>
+</html>
