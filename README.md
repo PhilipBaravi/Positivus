@@ -1,5 +1,5 @@
 # Positivus
-App made with React + Tailwind#
+App made with React + Tailwind
 
 [🔗 Live Demo](https://philipbaravi.github.io/Positivus/)
 
