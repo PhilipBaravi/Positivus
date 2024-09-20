@@ -1,4 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// App.jsx
+
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import Nav from "./components/navigation/Nav";
 import About from "./components/about/About";
 import Services from "./components/services/Services";
@@ -33,18 +42,36 @@ function App() {
       <ScrollToTop /> {/* Scroll to top on route changes */}
       <div className="max-w-[1920px] mx-auto scrollbar-custom">
         <Nav />
-        <Routes>
-          {/* Home and other page routes */}
-          <Route path="/" element={<HomePage />} />
-          <Route path="/pricing" element={<Pricing />} />
-
-          {/* Spread service routes here */}
-          {ServicePageRoutes()}
-          <Route path="/consultation" element={<Consultation />} />
-        </Routes>
+        <RedirectHandler />
         <Footer />
       </div>
     </Router>
+  );
+}
+
+function RedirectHandler() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const redirectPath = params.get("redirect");
+
+    if (redirectPath && location.pathname === "/") {
+      navigate(redirectPath, { replace: true });
+    }
+  }, [navigate, location]);
+
+  return (
+    <Routes>
+      {/* Home and other page routes */}
+      <Route path="/" element={<HomePage />} />
+      <Route path="/pricing" element={<Pricing />} />
+
+      {/* Spread service routes here */}
+      {ServicePageRoutes()}
+      <Route path="/consultation" element={<Consultation />} />
+    </Routes>
   );
 }
 
