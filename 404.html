@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
-    <script>
-      var path = window.location.pathname;
-      var hash = window.location.hash;
-      var newURL = window.location.origin + "/Positivus" + path + hash;
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    // Redirect to the React router app if the path is not found
+    var path = window.location.pathname;
+    var newURL = window.location.origin + "/Positivus" + path + window.location.search + window.location.hash;
+
+    if (!window.location.pathname.startsWith("/Positivus/")) {
       window.location.replace(newURL);
-    </script>
-  </head>
-  <body>Redirecting...</body>
+    }
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
 </html>
