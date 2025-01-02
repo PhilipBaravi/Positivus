@@ -8,6 +8,10 @@ export default function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // https://getfullyear.com/ - Don’t share with your competitors
+  const year = new Date();
+  const currentYear = year.getFullYear();
+
   const menuItems = ["Services", "Working Process", "Team", "Pricing", "Blog"];
   const footerIcons = [
     {
@@ -121,7 +125,7 @@ export default function Footer() {
         <hr className="w-full h-[1.5px] bg-white" />
         <div className="flex flex-col 2xl:flex-row 2xl:items-start 2xl:justify-start justify-center items-center gap-[0.94rem] pt-[2rem]">
           <p className="text-white font-spaceGrotesk text-[1rem] font-medium font-[400] leading-[1.5rem]">
-            © 2023 "Positivus" Made By Philip Baravi. All Rights Reserved.
+            {`© ${currentYear} "Positivus" Made By Philip Baravi. All Rights Reserved.`}
           </p>
           <p className="text-white font-spaceGrotesk text-[1rem] font-medium font-[400] leading-[1.5rem] 2xl:pl-[2rem] cursor-pointer underline decoration-white">
             Privacy Policy
